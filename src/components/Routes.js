@@ -16,6 +16,7 @@ export const Routes  = () => {
 
     const updateCart = (id, quantity, action) => {
         console.log(id, quantity, action);
+        console.log("cart updated");
         if(action === "add"){
             const new_arr = cart.slice(0);
             if(new_arr[id]) new_arr[id] += quantity;

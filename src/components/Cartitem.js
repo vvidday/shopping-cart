@@ -11,12 +11,12 @@ export const Cartitem = (props) => {
     return (
         <div className = "cart-item-container">
             <div className = "cart-input-container">
-                <span>Quantity:</span>
-                <input type="number" value={qty} min="1" max="10" onChange={(e)=>{
-                    setQty(parseInt(e.target.value));
-
-                }}></input>
-                <button className="cart-item-remove-button" onClick = {()=>props.updateCart(props.itemdata.id, 0, "change")}>Remove Item</button>
+                <button onClick={()=>setQty(qty-1)}>-</button>
+                <span>Quantity: {qty}</span>
+                <button onClick={()=>{
+                    if(qty === 10) alert("Sorry, the maximum you can purchase is 10!");
+                    else setQty(qty+1)
+                }}>+</button>
             </div>
             <p className="cart-item-name">{props.itemdata.name}</p>
             <p className="cart-item-price">Price: {props.itemdata.price*qty}</p>

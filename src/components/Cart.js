@@ -5,13 +5,15 @@ export const Cart = (props) => {
 
     const displayItems = () => {
         const arr = [];
+        
         for(let i = 0; i < props.data.length; i++){
             if(props.data[i]){
                 arr.push(
-                    <Cartitem quantity={props.data[i]} itemdata={props.array[i]} updateCart={props.updateCart}/>
+                    <Cartitem key={i} quantity={props.data[i]} itemdata={props.array[i]} updateCart={props.updateCart}/>
                 );
             }
         }
+        console.log(arr);
         return arr;
     }
 
