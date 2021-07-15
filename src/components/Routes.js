@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import { Nav } from './Nav';
 import { Home } from './Home';
 import { Shop } from './Shop';
 import { Cart } from './Cart';
 import { data } from '../itemdata';
+import cartimg from '../images/cart.svg';
 
 export const Routes  = () => {
     const dt = data();
@@ -21,9 +22,9 @@ export const Routes  = () => {
             else new_arr[id] = quantity;
             setCart(new_arr);
         }
-        else{
+        else if(action === "change"){
             const new_arr = cart.slice(0);
-            if(new_arr[id]) new_arr[id] = Math.min(0, new_arr[id] - quantity);
+            new_arr[id] = quantity;
             setCart(new_arr);
         }
     }
@@ -31,7 +32,7 @@ export const Routes  = () => {
     return (
         <BrowserRouter>
             <Nav />
-            <button>Cart Items : {cart.reduce((a, b)=>a+b, 0)}</button>
+            <Link to="/cart"><img src={cartimg} alt="Shopping Cart"></img>{cart.reduce((a, b)=>a+b, 0)}</Link>
             <Switch>
                 <Route exact path="/">
                     <Home />
@@ -40,7 +41,7 @@ export const Routes  = () => {
                     <Shop data = {itemdata} updateCart = {updateCart}/>
                 </Route>
                 <Route path="/cart">
-                    <Cart />
+                    <Cart data = {cart} array ={dt} updateCart = {updateCart} />
                 </Route>
             </Switch>
         </BrowserRouter>
