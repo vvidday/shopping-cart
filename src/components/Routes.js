@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { HashRouter, Switch, Route, Link } from 'react-router-dom';
 import { Nav } from './Nav';
 import { Home } from './Home';
 import { Shop } from './Shop';
@@ -34,7 +34,7 @@ export const Routes  = () => {
     }
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Nav />
             <div id="cart-div">
                 <Link to="/cart" id="cart-container"><img id="cart-image" src={cartimg} alt="Shopping Cart"></img><span id="cart-text">{cart.reduce((a, b)=>a+b, 0)}</span></Link>
@@ -50,7 +50,7 @@ export const Routes  = () => {
                     <Cart data = {cart} array ={dt} updateCart = {updateCart} />
                 </Route>
             </Switch>
-        </BrowserRouter>
+        </HashRouter>
 
     );
 
