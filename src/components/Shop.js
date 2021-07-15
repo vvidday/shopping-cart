@@ -1,5 +1,6 @@
 import React from 'react';
 import { Item } from './Item';
+import '../styles/Shop.css';
 
 export const Shop = (props) => {
     const displayItems = () => {
@@ -13,9 +14,13 @@ export const Shop = (props) => {
     }
 
     return (
-        <div className="shop-root">
-            {displayItems()}
+        <div>
+            <h1 className="title">Shop</h1>
+            <div className="shop-root">
+                {displayItems()}
+            </div>
         </div>
+        
     );
 
 }

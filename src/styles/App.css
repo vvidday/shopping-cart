@@ -1,0 +1,34 @@
+:root {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: whitesmoke;
+}
+
+#cart-container {
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+#cart-container:hover {
+  cursor: pointer;
+  transform: scale(110%);
+}
+
+#cart-image {
+  width: 50%;
+}
+
+#cart-text {
+  font-size: 2rem;
+}
+
+#cart-div {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}

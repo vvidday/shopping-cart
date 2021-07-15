@@ -1,0 +1,21 @@
+#navbar {
+  width: 100%;
+  height: 4rem;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navlinks > a {
+  color: honeydew;
+  font-size: 2rem;
+  margin: 2rem;
+  text-decoration: none;
+  border: 1px solid black;
+}
+
+.navlinks > a:hover {
+  cursor: pointer;
+  border-bottom: 1px solid honeydew;
+}

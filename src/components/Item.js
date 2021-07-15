@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import '../styles/Item.css';
 
 export const Item = (props) =>{
     const [qty, setQty] = useState(1);
@@ -16,7 +17,7 @@ export const Item = (props) =>{
         <div className="item-container">
             <img className="item-image" src={props.data.src} alt="headphones"></img>
             <p className="item-name">{props.data.name}</p>
-            <p className="item-price">{props.data.price}</p>
+            <p className="item-price">${props.data.price}</p>
             <div className="item-input">
                 <input type="number" value={qty} min="1" max="10" onChange={(e)=>{
                     if(e.target.value) setQty(parseInt(e.target.value));

@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import '../styles/Cartitem.css';
 
 export const Cartitem = (props) => {
 
@@ -10,6 +11,9 @@ export const Cartitem = (props) => {
 
     return (
         <div className = "cart-item-container">
+            
+            <p className="cart-item-name">{props.itemdata.name}</p>
+            <img className="cart-item-image" src={props.itemdata.src}></img>         
             <div className = "cart-input-container">
                 <button onClick={()=>setQty(qty-1)}>-</button>
                 <span>Quantity: {qty}</span>
@@ -18,9 +22,7 @@ export const Cartitem = (props) => {
                     else setQty(qty+1)
                 }}>+</button>
             </div>
-            <p className="cart-item-name">{props.itemdata.name}</p>
-            <p className="cart-item-price">Price: {props.itemdata.price*qty}</p>
-            <img className="cart-item-image" src={props.itemdata.src}></img>
+            <p className="cart-item-price">Price: ${props.itemdata.price*qty}</p>    
         </div>
     );
 

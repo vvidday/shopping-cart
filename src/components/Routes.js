@@ -28,12 +28,17 @@ export const Routes  = () => {
             new_arr[id] = quantity;
             setCart(new_arr);
         }
+        else if(action === "clear"){
+            setCart(new Array(dt.length));
+        }
     }
 
     return (
         <BrowserRouter>
             <Nav />
-            <Link to="/cart"><img src={cartimg} alt="Shopping Cart"></img>{cart.reduce((a, b)=>a+b, 0)}</Link>
+            <div id="cart-div">
+                <Link to="/cart" id="cart-container"><img id="cart-image" src={cartimg} alt="Shopping Cart"></img><span id="cart-text">{cart.reduce((a, b)=>a+b, 0)}</span></Link>
+            </div>
             <Switch>
                 <Route exact path="/">
                     <Home />

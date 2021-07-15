@@ -15,19 +15,19 @@ const data = () => {
             {   
                 id: 1,
                 name: "Beoplay HX Active Noise Cancelling Wireless Headphones (Black Anthracite)",
-                price: 790.04,
+                price: 856.71,
                 src: hp02,
             },
             {   
                 id: 2,
                 name: "Beoplay HX Portal Noise Cancelling Wireless Headphones (Black Anthracite)",
-                price: 790.04,
+                price: 593.94,
                 src: hp03,
             },
             {   
                 id: 3,
                 name: "Beoplay HX Active Noise Cancelling Wireless Headphones (Grey Mist)",
-                price: 790.04,
+                price: 605.55,
                 src: hp04,
             }
         ]
